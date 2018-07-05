@@ -7,8 +7,8 @@ tenants:
     databases:
       hibernate:
         driverClass: com.mysql.cj.jdbc.Driver
-        user: careerstack
-        password: career01nq
+        user: hmbuser
+        password: hmbpasswd
         url: jdbc:mysql://localhost:3306/tenant1?autoReconnect=true&useSSL=false&nullNamePatternMatchesAll=true&useLegacyDatetimeCode=false
         properties:
           charSet: UTF-8
@@ -32,8 +32,8 @@ tenants:
     databases:
       hibernate:
         driverClass: com.mysql.cj.jdbc.Driver
-        user: careerstack
-        password: career01nq
+        user: hmbuser
+        password: hmbpasswd
         url: jdbc:mysql://localhost:3306/tenant2?autoReconnect=true&useSSL=false&nullNamePatternMatchesAll=true&useLegacyDatetimeCode=false
         properties:
           charSet: UTF-8
