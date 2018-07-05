@@ -53,3 +53,15 @@ tenants:
         checkConnectionOnBorrow: true
         checkConnectionOnConnect: true
         checkConnectionOnReturn: true
+
+logging:
+  level: INFO
+  loggers:
+    "io.dropwizard": DEBUG
+    "org.hibernate.SQL":
+      level: DEBUG
+      additive: false
+      appenders:
+        - type: console
+  appenders:
+    - type: console
