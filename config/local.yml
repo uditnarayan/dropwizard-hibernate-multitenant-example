@@ -1,0 +1,55 @@
+name: multitenant-app
+
+tenantHeader: X-TENANT-ID
+
+tenants:
+  - id: tenant1
+    databases:
+      hibernate:
+        driverClass: com.mysql.cj.jdbc.Driver
+        user: careerstack
+        password: career01nq
+        url: jdbc:mysql://localhost:3306/tenant1?autoReconnect=true&useSSL=false&nullNamePatternMatchesAll=true&useLegacyDatetimeCode=false
+        properties:
+          charSet: UTF-8
+          characterEncoding: UTF-8
+          useUnicode: true
+          hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+          hibernate.show_sql: true
+          hibernate.generate_statistics: false
+          hibernate.hbm2ddl.auto: validate
+          hibernate.jdbc.time_zone: UTC
+
+        maxWaitForConnection: 1s
+        validationQuery: "SELECT 1"
+        minSize: 8
+        maxSize: 32
+        checkConnectionWhileIdle: true
+        checkConnectionOnBorrow: true
+        checkConnectionOnConnect: true
+        checkConnectionOnReturn: true
+  - id: tenant2
+    databases:
+      hibernate:
+        driverClass: com.mysql.cj.jdbc.Driver
+        user: careerstack
+        password: career01nq
+        url: jdbc:mysql://localhost:3306/tenant2?autoReconnect=true&useSSL=false&nullNamePatternMatchesAll=true&useLegacyDatetimeCode=false
+        properties:
+          charSet: UTF-8
+          characterEncoding: UTF-8
+          useUnicode: true
+          hibernate.dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+          hibernate.show_sql: true
+          hibernate.generate_statistics: false
+          hibernate.hbm2ddl.auto: validate
+          hibernate.jdbc.time_zone: UTC
+
+        maxWaitForConnection: 1s
+        validationQuery: "SELECT 1"
+        minSize: 8
+        maxSize: 32
+        checkConnectionWhileIdle: true
+        checkConnectionOnBorrow: true
+        checkConnectionOnConnect: true
+        checkConnectionOnReturn: true
