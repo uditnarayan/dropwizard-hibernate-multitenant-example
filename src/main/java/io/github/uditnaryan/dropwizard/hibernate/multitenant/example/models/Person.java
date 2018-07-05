@@ -1,4 +1,4 @@
-package io.github.uditnaryan.dropwizard.hibernate.multitenant.example.commands.models;
+package io.github.uditnaryan.dropwizard.hibernate.multitenant.example.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;

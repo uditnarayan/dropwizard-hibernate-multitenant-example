@@ -1,4 +1,4 @@
-package io.github.uditnaryan.dropwizard.hibernate.multitenant.example.commands;
+package io.github.uditnaryan.dropwizard.hibernate.multitenant.example;
 
 import io.dropwizard.Application;
 import io.dropwizard.hibernate.multitenant.MultiTenantHibernateBundle;
@@ -15,7 +15,7 @@ public class MultiTenantService extends Application<MultiTenantConfiguration> {
         super.initialize(bootstrap);
 
         String[] entityPackages = {
-                "io.github.uditnaryan.dropwizard.hibernate.multitenant.example.commands.entities"
+                "io.github.uditnaryan.dropwizard.hibernate.multitenant.example.entities"
         };
 
         MultiTenantHibernateBundle<MultiTenantConfiguration> hibernateBundle =
@@ -28,10 +28,11 @@ public class MultiTenantService extends Application<MultiTenantConfiguration> {
                 return multiTenantConfiguration.getTenantHeader();
             }
         };
+        bootstrap.addBundle(hibernateBundle);
     }
 
     public void run(MultiTenantConfiguration configuration, Environment environment) throws Exception {
-        System.out.println("Hello");
+        System.out.println("Running application...");
     }
 
     public static void main(String... args) throws Exception {

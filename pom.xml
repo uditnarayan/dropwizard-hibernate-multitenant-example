@@ -43,6 +43,12 @@
             <artifactId>dropwizard-hibernate-multitenant</artifactId>
             <version>1.2.2-BETA</version>
         </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-connector-java.version}</version>
+        </dependency>
     </dependencies>
 
 </project>

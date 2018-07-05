@@ -1,4 +1,4 @@
-package io.github.uditnaryan.dropwizard.hibernate.multitenant.example.commands;
+package io.github.uditnaryan.dropwizard.hibernate.multitenant.example;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.dropwizard.Configuration;

@@ -1,7 +1,7 @@
-package io.github.uditnaryan.dropwizard.hibernate.multitenant.example.commands.resources;
+package io.github.uditnaryan.dropwizard.hibernate.multitenant.example.resources;
 
 import com.codahale.metrics.annotation.Timed;
-import io.github.uditnaryan.dropwizard.hibernate.multitenant.example.commands.models.Person;
+import io.github.uditnaryan.dropwizard.hibernate.multitenant.example.models.Person;
 
 import javax.validation.Valid;
 import javax.ws.rs.GET;
