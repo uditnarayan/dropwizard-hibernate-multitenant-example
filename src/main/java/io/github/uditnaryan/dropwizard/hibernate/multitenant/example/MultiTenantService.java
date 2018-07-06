@@ -17,12 +17,14 @@ import java.util.Optional;
 @Slf4j
 public class MultiTenantService extends Application<MultiTenantConfiguration> {
 
+    private MultiTenantHibernateBundle<MultiTenantConfiguration> hibernateBundle;
+
     @Override
     public void initialize(Bootstrap<MultiTenantConfiguration> bootstrap) {
         super.initialize(bootstrap);
 
         String[] entityPackages = {
-                "io.github.uditnaryan.dropwizard.hibernate.multitenant.example.entities"
+                "io.github.uditnaryan.dropwizard.hibernate.multitenant.example.storage"
         };
 
         MultiTenantHibernateBundle<MultiTenantConfiguration> hibernateBundle =

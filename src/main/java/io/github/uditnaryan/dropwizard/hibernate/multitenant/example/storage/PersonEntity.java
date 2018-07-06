@@ -1,6 +1,7 @@
-package io.github.uditnaryan.dropwizard.hibernate.multitenant.example.entities;
+package io.github.uditnaryan.dropwizard.hibernate.multitenant.example.storage;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +12,7 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "people")
+@Builder
 public class PersonEntity {
 
     @Id
