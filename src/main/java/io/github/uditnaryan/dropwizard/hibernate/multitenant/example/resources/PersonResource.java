@@ -8,6 +8,7 @@ import io.github.uditnaryan.dropwizard.hibernate.multitenant.example.models.Pers
 import io.github.uditnaryan.dropwizard.hibernate.multitenant.example.storage.PersonDAO;
 import lombok.extern.slf4j.Slf4j;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -22,6 +23,7 @@ public class PersonResource {
     @GET
     @Timed
     @UnitOfWork
+    @RolesAllowed({"CLIENT"})
     public Response getPerson(@Valid @PathParam("id") int id) {
         try {
             PersonDAO personDAO = new PersonDAO(TenantRequestContext.HIBERNATE_SESSION_FACTORY.get());
@@ -46,6 +48,7 @@ public class PersonResource {
     @POST
     @Timed
     @UnitOfWork
+    @RolesAllowed({"CLIENT"})
     public Response createPerson(@Valid Person person) {
         try {
             PersonDAO personDAO = new PersonDAO(TenantRequestContext.HIBERNATE_SESSION_FACTORY.get());

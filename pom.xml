@@ -40,6 +40,12 @@
 
         <dependency>
             <groupId>io.dropwizard</groupId>
+            <artifactId>dropwizard-auth</artifactId>
+            <version>${dropwizard.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-hibernate-multitenant</artifactId>
             <version>1.2.2-BETA</version>
         </dependency>
