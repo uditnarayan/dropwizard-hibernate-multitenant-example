@@ -1,14 +1,9 @@
 package io.github.uditnaryan.dropwizard.hibernate.multitenant.example.storage;
 
-import io.dropwizard.hibernate.AbstractDAO;
+import io.dropwizard.hibernate.multitenant.MultiTenantDAO;
 import io.github.uditnaryan.dropwizard.hibernate.multitenant.example.models.Person;
-import org.hibernate.SessionFactory;
 
-public class PersonDAO extends AbstractDAO<PersonEntity> {
-
-    public PersonDAO(SessionFactory sessionFactory) {
-        super(sessionFactory);
-    }
+public class PersonDAO extends MultiTenantDAO<PersonEntity> {
 
     public Person findById(int id) {
         PersonEntity entity = this.get(id);

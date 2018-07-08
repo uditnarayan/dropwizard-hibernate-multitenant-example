@@ -19,6 +19,12 @@ import javax.ws.rs.core.Response;
 @Slf4j
 public class PersonResource {
 
+    private PersonDAO personDAO;
+
+    public PersonResource() {
+        this.personDAO = new PersonDAO();
+    }
+
     @Path("/{id: \\d+}")
     @GET
     @Timed
@@ -26,7 +32,6 @@ public class PersonResource {
     @RolesAllowed({"CLIENT"})
     public Response getPerson(@Valid @PathParam("id") int id) {
         try {
-            PersonDAO personDAO = new PersonDAO(TenantRequestContext.HIBERNATE_SESSION_FACTORY.get());
             Person person = personDAO.findById(id);
             if (person == null) {
                 return Response
@@ -51,7 +56,6 @@ public class PersonResource {
     @RolesAllowed({"CLIENT"})
     public Response createPerson(@Valid Person person) {
         try {
-            PersonDAO personDAO = new PersonDAO(TenantRequestContext.HIBERNATE_SESSION_FACTORY.get());
             Person newPerson = personDAO.create(person);
             return Response.ok(newPerson).build();
         }
