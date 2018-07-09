@@ -29,6 +29,13 @@
                 <enabled>true</enabled>
             </releases>
         </repository>
+
+        <repository>
+            <id>clojars</id>
+            <name>Clojars repository</name>
+            <url>https://clojars.org/repo</url>
+        </repository>
+
     </repositories>
 
     <dependencies>
@@ -45,9 +52,9 @@
         </dependency>
 
         <dependency>
-            <groupId>io.dropwizard</groupId>
+            <groupId>org.clojars.uditnarayan.dropwizard</groupId>
             <artifactId>dropwizard-hibernate-multitenant</artifactId>
-            <version>1.2.2-BETA</version>
+            <version>1.2.2-BETA-1</version>
         </dependency>
 
         <dependency>
